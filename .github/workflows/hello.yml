@@ -6,11 +6,12 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
+      - name: コードを取ってくる
+        uses: actions/checkout@v7
       - name: あいさつ
         run: echo "Hello, GitHub Actions!"
       - name: 実行した人を表示
         run: echo "実行した人：${{ github.actor }}"
-        
       - name: ランナーを調べる
         run: |
           uname -a
@@ -18,4 +19,3 @@ jobs:
           npm -v
           pwd
           ls -la
-
